@@ -1,0 +1,53 @@
+<!--
+=====================================================
+  Archivo     : 7. Imagenes.html
+  Tema        : Imagenes en HTML (etiqueta img)
+  Descripcion : Inserta imagenes locales, redimensio-
+                nadas, desde internet y un GIF animado.
+  Recordatorio: src = ruta de la imagen
+                alt = texto alternativo
+                width / height = tamaño en pixeles
+=====================================================
+-->
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="en"> <!-- Inicio del documento -->
+<!-- ================= CABECERA ================= -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificacion de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable -->
+    <title>Imagenes en HTML</title> <!-- Texto de la pestana -->
+</head> <!-- fin del head -->
+<!-- ================= CUERPO ================= -->
+<body>
+    <h2>Imagenes en HTML</h2> <!-- Titulo de la pagina -->
+
+    <!-- ------------- 1. Imagen local ------------- -->
+    <!-- Imagen local: el archivo esta en la misma carpeta que el HTML -->
+    <h3>Locales</h3>
+    <!-- alt: texto alternativo que se muestra si la imagen no carga -->
+    <img src="caritas.png" alt="Imagen de carita feliz">
+
+    <!-- ------------- 2. Imagen local redimensionada ------------- -->
+    <!-- Imagen local ubicada dentro de la carpeta "imagenes", con tamaño modificado -->
+    <h3>Locales redismensionado</h3>
+    <!-- width y height: ancho y alto en pixeles -->
+    <img src="imagenes/carita.png" alt="" width="200" height="100">
+    <!-- Ojo: al cambiar ancho y alto por separado la imagen puede deformarse -->
+
+    <!-- ------------- 3. Imagen desde internet ------------- -->
+    <!-- Imagen tomada de internet mediante su URL -->
+    <h3>Desde internet</h3>
+    <img src="https://st2.depositphotos.com/2172759/11751/v/950/depositphotos_117511772-stock-illustration-happy-face-isolated-on-white.jpg"
+    width="200" height="200"
+    alt="">
+    <!-- Necesita conexion a internet para que la imagen se muestre -->
+
+    <!-- ------------- 4. Animacion (GIF) ------------- -->
+    <!-- Un GIF animado se inserta igual que una imagen normal -->
+    <h3>Animaciones</h3>
+    <img
+src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExejMydmVybzBiY3lkdWdlNnplMzJiMXA3Ymt3czE3NGplNDZuZDg5YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tXL4FHPSnVJ0A/giphy.gif"
+    width="200" height="200"
+    alt="">
+</body> <!-- fin del body -->
+</html> <!-- fin del documento -->

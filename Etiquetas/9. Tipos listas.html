@@ -1,0 +1,110 @@
+<!--
+=====================================================
+  Archivo     : 9. Tipos listas.html
+  Tema        : Tipos de listas en HTML
+  Descripcion : Ejemplos de listas ordenadas, no
+                ordenadas, de definiciones y anidadas.
+  Recordatorio: ol = lista ordenada
+                ul = lista no ordenada
+                li = elemento de lista
+                dl / dt / dd = lista de definiciones
+=====================================================
+-->
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="en"> <!-- Inicio del documento -->
+<!-- ================= CABECERA ================= -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificacion de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable -->
+    <title>Tipos de listas en HTML</title> <!-- Texto de la pestana -->
+</head> <!-- fin del head -->
+<!-- ================= CUERPO ================= -->
+<body>
+    <h1>Tipos de listas</h1> <!-- Titulo principal -->
+
+    <!-- ################ 1. LISTAS ORDENADAS ################ -->
+    <!-- LISTAS ORDENADAS: usan ol y cada elemento va en un li -->
+    <h2>Listas ordenadas</h2>
+    <p>Una lista ordenada es una serie de elementos los cuales 
+        tendran una numeracion de acuerdo al numeros de elementos.
+    </p>
+    <ol> <!-- inicio de lista ordenada -->
+        <li>Luna Arias </li>
+        <li>Franco Andrea</li>
+        <li>Granados Evelyn</li>
+    </ol> <!-- fin de lista ordenada -->
+
+    <!-- ################ 2. LISTAS NO ORDENADAS ################ -->
+    <!-- LISTAS NO ORDENADAS: usan ul, cada item lleva una viñeta -->
+    <h2>Listas no ordenadas</h2>
+    <p>Las listas no ordenadas no utilizan ninguna numeracion delante 
+        de cada item sino un pequeño elemento grafico
+    </p>
+    <ul> <!-- inicio de lista no ordenada -->
+        <li>C</li>
+        <li>C++</li>
+        <li>Python</li>
+    </ul> <!-- fin de lista no ordenada -->
+
+    <!-- ################ 3. LISTAS DE DEFINICIONES ################ -->
+    <!-- LISTAS DE DEFINICIONES: dl contiene pares dt (termino) y dd (definicion) -->
+    <h2>Lista de definiciones</h2>
+    <p>Se utiliza para asociar un termino y la definicion del mismo</p>
+    <dl> <!-- inicio de lista de definiciones -->
+        <!-- Primer termino-->
+        <dt>C++</dt>
+        <!-- Definicion del primer termino-->
+        <dd>
+            Es un lenguaje de programacion, diseñado a mediados de los años
+            1980 como extension del lenguaje de programacion C.
+        </dd>
+        <!-- Segundo termino-->
+        <dt>Java</dt>
+        <!-- Definicion del segundo termino-->
+        <dd>
+            Es un lenguaje de programacion orientado a objetos desarrollado
+            por Sun Microsystem a principios de los 90.
+        </dd>
+        <!-- Tercer termino-->
+        <dt>JavaScript</dt>
+        <!-- Definicion del tercer termino-->
+        <dd>
+            Es un lenguaje interpretado, es decir que no requiere compilacion,
+            utilizado principalmente en paginas web, con una sintaxis similar
+            al lenguaje de programacion C.
+        </dd>
+    </dl> <!-- fin de lista de definiciones -->
+
+    <!-- ################ 4. LISTAS ANIDADAS ################ -->
+    <!-- LISTAS ANIDADAS: una lista dentro de un li de otra lista -->
+    <h2>Listas anidadas</h2>
+    <p>En HTML nos permite insertar una lista dentro de otra lista, se pueden
+        anidar diferentes tipos de lista de acuerdo al requerimiento
+    </p>
+    <!-- Lista ordenada principal (paises) -->
+    <ol>
+        <li>Argentina
+            <!-- Lista no ordenada interna (ciudades) -->
+            <ul>
+                <li>Buenos aires</li>
+                <li>La plata</li>
+                <li>Mendoza</li>
+            </ul> <!-- fin ciudades de Argentina -->
+        </li>
+        <li>España
+            <ul>
+                <li>Barcelona</li>
+                <li>Madrid</li>
+                <li>Sevilla</li>
+            </ul> <!-- fin ciudades de España -->
+        </li>
+        <li>Mexico
+            <ul>
+                <li>Chihuahua</li>
+                <li>Cd. Juarez</li>
+                <li>Hermosillo</li>
+            </ul> <!-- fin ciudades de Mexico -->
+        </li>
+    </ol> <!-- fin de lista de paises -->
+</body> <!-- fin del body -->
+</html> <!-- fin del documento -->

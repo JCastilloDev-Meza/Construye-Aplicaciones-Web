@@ -1,0 +1,58 @@
+<!--
+=====================================================
+  Archivo     : 6. Enlaces.html
+  Tema        : Enlaces o hipervinculos (etiqueta a)
+  Descripcion : Muestra enlaces a otras paginas del
+                mismo sitio y a sitios externos, con
+                los distintos valores del atributo
+                target.
+  Recordatorio: href = destino del enlace
+                target = donde se abre el enlace
+=====================================================
+-->
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="en"> <!-- Inicio del documento -->
+<!-- ================= CABECERA ================= -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificacion de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable -->
+    <title>Enlaces en HTML</title> <!-- Texto de la pestana -->
+</head> <!-- fin del head -->
+<!-- ================= CUERPO ================= -->
+<body>
+    <h2>Tipos de enlaces en HTML</h2> <!-- Titulo de la pagina -->
+
+    <!-- ################ ENLACES INTERNOS ################ -->
+    <p><strong>Enlaces/Hipervinculos a otra pagina del
+            mismo sitio.
+        </strong></p>
+    <!-- Sin target: se abre en la misma pestana (comportamiento por defecto) -->
+    <a href="1. Hola_mundo.html">1. Hola Mundo</a><br>
+    <!-- _self: se abre en la misma pestana o ventana -->
+    <a href="2. Encabezados.html" target="_self">
+        2. Encabezados</a><br>
+    <!-- _blank: se abre en una nueva pestana -->
+    <a href="3. Parrafos.html" target="_blank">
+        3. Parrafos</a><br>
+    <!-- _parent: se abre en el marco padre (frame contenedor) -->
+    <a href="4. Salto de linea.html" target="_parent">
+        4. Salto de linea</a><br>
+    <!-- _top: se abre ocupando toda la ventana, fuera de cualquier marco -->
+    <a href="5. Enfatizado.html" target="_top">
+        5. Enfatizado</a><br>
+
+    <!-- ################ ENLACES EXTERNOS ################ -->
+    <p><strong>Enlaces/Hipervinculos a sitios externos
+        </strong></p>
+    <!-- Enlaces a sitios externos usando la URL completa -->
+    <a href="https://www.google.com/">Google</a><br> <!-- Sin target: misma pestana -->
+    <a href="https://www.youtube.com/" target="_self">
+        YouTube</a><br> <!-- _self: misma pestana -->
+    <a href="https://www.facebook.com/" target="_blank">
+        FaceBook</a><br> <!-- _blank: nueva pestana -->
+    <a href="https://www.wikipedia.com/" target="_parent">
+        WikiPedia</a><br> <!-- _parent: marco padre -->
+    <a href="https://www.espanol.yahoo.com/" target="_top">
+        Yahoo!</a><br> <!-- _top: ventana completa -->
+</body> <!-- fin del body -->
+</html> <!-- fin del documento -->

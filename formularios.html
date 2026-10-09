@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html>: le indica al navegador que el documento esta escrito en HTML5 -->
+<html lang="es">
+<!-- <html>: etiqueta raiz, contiene todo el documento.
+     lang="es": declara que el contenido esta en español (ayuda a buscadores y lectores de pantalla) -->
+<head>
+<!-- <head>: zona de configuracion del documento; lo que va aqui NO se muestra en la pagina -->
+
+<meta charset="UTF-8">
+<!-- charset="UTF-8": codificacion de caracteres; permite mostrar acentos, ñ y simbolos correctamente -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- viewport: hace que la pagina se adapte al ancho de pantallas de celular y tableta -->
+
+<title>Formularios en HTML</title>
+<!-- <title>: texto que aparece en la pestaña del navegador -->
+
+<!-- Libreria de iconos en linea (Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+<!-- <link rel="stylesheet">: enlaza una hoja de estilos externa.
+     href: direccion de la hoja de estilos de Font Awesome, que contiene los iconos
+     (se usan despues con la etiqueta <i> en los botones) -->
+
+</head>
+<body>
+<!-- <body>: aqui va todo el contenido visible de la pagina -->
+
+<!-- DATOS DEL ALUMNO -->
+<p><strong>Alumno:</strong> CASTILLO AVILA FRANCISCO JARED<br>
+<strong>Numero de control:</strong> 0818</p>
+<!-- <p>: define un parrafo.
+     <strong>: texto en negritas (importante).
+     <br>: salto de linea (no necesita etiqueta de cierre) -->
+
+<h1>Formularios</h1>
+<!-- <h1>: titulo principal de la pagina (el encabezado de mayor jerarquia, de h1 a h6) -->
+
+<p>Un formulario permite al visitante cargar datos y que sean enviados al servidor.</p>
+<p>El HTML no tiene la responsabilidad de registrar los datos en el servidor,
+esta actividad se delega a traves de un lenguaje que se ejecute en el servidor (PHP,
+ASP, ASP.NET, Node, etc.)
+</p>
+<!-- Estos parrafos explican la idea general: HTML solo CAPTURA los datos;
+     otro lenguaje del lado del servidor es el que los recibe y guarda -->
+
+
+<!-- ============================================================
+     1. EJEMPLO BASICO
+     ============================================================ -->
+<h2>Ejemplo basico</h2>
+<!-- <h2>: subtitulo de seccion -->
+
+<form action="" method="post">
+<!-- <form>: etiqueta contenedora; todo campo que este dentro forma parte del mismo formulario.
+     action="": direccion (URL) del archivo del servidor que recibira los datos.
+                Vacio significa que se envian a la misma pagina.
+     method="post": forma de envio. POST manda los datos ocultos dentro de la peticion
+                (se usa para informacion privada o larga). La otra opcion es GET, que
+                los muestra en la URL -->
+
+Ingresa tu nombre:
+<!-- Texto simple que sirve de etiqueta para que el usuario sepa que debe escribir -->
+
+<input type="text" name="nombre" size="20">
+<!-- <input>: campo de entrada de datos (no lleva etiqueta de cierre).
+     type="text": caja de texto de una sola linea.
+     name="nombre": identificador del campo; el servidor usa este nombre para recibir el dato.
+     size="20": ancho visible de la caja, equivale a 20 caracteres -->
+
+<br>
+<!-- Salto de linea: coloca el boton debajo de la caja de texto -->
+
+<input type="submit" value="enviar">
+<!-- type="submit": boton que envia el formulario al servidor.
+     value="enviar": texto que se muestra dentro del boton -->
+
+</form>
+<!-- </form>: cierre del formulario -->
+
+
+<!-- ============================================================
+     2. FORMULARIO PARA CONTRASEÑAS
+     ============================================================ -->
+<h2>Formulario para contraseñas</h2>
+<form action="" method="post">
+<!-- Abre un formulario nuevo, independiente del anterior -->
+
+Ingresa tu usuario:
+<input type="text" name="usuario">
+<!-- Caja de texto normal; name="usuario" es el nombre con el que se envia el dato.
+     Al no tener size, usa el ancho predeterminado del navegador -->
+
+Ingresa tu contraseña:
+<input type="password" name="pass">
+<!-- type="password": igual que text, pero oculta lo que se escribe (puntos o asteriscos)
+     para que nadie lo lea en pantalla. No cifra el dato, solo lo oculta visualmente -->
+
+<br>
+<input type="submit" value="enviar">
+<!-- Boton para enviar los datos -->
+
+<input type="reset" value="borrar">
+<!-- type="reset": boton que limpia todos los campos del formulario y los regresa
+     a su valor inicial. No envia nada al servidor -->
+
+</form>
+
+
+<!-- ============================================================
+     3. FORMULARIO CON TEXT AREA
+     ============================================================ -->
+<h2>Formulario con text area</h2>
+<form action="" method="post">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+
+Ingresa tu correo:
+<input type="email" name="correo">
+<!-- type="email": campo para correos electronicos. El navegador valida automaticamente
+     que el texto tenga formato correcto (con @ y dominio) antes de enviar -->
+<br>
+
+Ingresa tus comentarios:
+<textarea name="comentarios" rows="1" cols="10"></textarea>
+<!-- <textarea>: caja de texto de VARIAS lineas, util para comentarios o mensajes largos.
+     Si lleva etiqueta de cierre, a diferencia de input.
+     name="comentarios": nombre con el que se envia el contenido.
+     rows="1": numero de filas (alto) visibles.
+     cols="10": numero de columnas (ancho) visibles, medido en caracteres.
+     El usuario puede cambiar su tamaño arrastrando la esquina inferior derecha -->
+<br>
+
+<input type="submit" value="enviar">
+<input type="reset" value="borrar">
+</form>
+
+
+<!-- ============================================================
+     4. FORMULARIOS CON CHECKBOX
+     ============================================================ -->
+<h2>Formularios con checkbox</h2>
+<form action="" method="post">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+
+<br>
+Selecciona los lenguajes que conozcas:
+<br>
+
+<input type="checkbox" name="Java">Java <br>
+<!-- type="checkbox": casilla de verificacion; permite marcar UNA O VARIAS opciones a la vez.
+     name="Java": nombre de esa casilla; solo se envia si esta marcada.
+     El texto "Java" que esta a su lado es la etiqueta que ve el usuario -->
+
+<input type="checkbox" name="Python"> Python <br>
+<!-- Segunda casilla, independiente de la primera -->
+
+<input type="checkbox" name="C#">C# <br>
+<!-- Tercera casilla -->
+
+<input type="checkbox" name="Flutter"> Flutter <br>
+<!-- Cuarta casilla. Cada una tiene su propio name, por eso se pueden marcar todas -->
+
+</form>
+<!-- Este formulario no lleva boton de envio, por eso solo se muestra como ejemplo visual -->
+
+
+<!-- ============================================================
+     5. FORMULARIOS CON RADIOBOTON
+     ============================================================ -->
+<h2>Formularios con Radioboton</h2>
+<form action="" method="post">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+Selecciona el maximo de estudios que tienes:
+<br>
+
+<input type="radio" name="estudios" value="1">Sin estudios <br>
+<!-- type="radio": boton de opcion; permite elegir SOLO UNA opcion de un grupo.
+     name="estudios": todos los radios con el mismo name forman un grupo, y al elegir uno
+                      se desmarca el anterior.
+     value="1": valor que recibe el servidor si esta opcion es la elegida
+                (el texto "Sin estudios" es solo lo que ve el usuario) -->
+
+<input type="radio" name="estudios" value="2">Primaria <br>
+<input type="radio" name="estudios" value="3">Secundaria <br>
+<input type="radio" name="estudios" value="4">Preparatoria <br>
+<!-- Mismo name="estudios" con diferente value: pertenecen al mismo grupo -->
+
+<input type="submit" value="enviar">
+<input type="reset" value="borrar">
+</form>
+
+
+<!-- ============================================================
+     6. FORMULARIOS CON SELECCION
+     ============================================================ -->
+<h2>Formularios con seleccion</h2>
+<form action="" method="post">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+
+<br>
+Selecciona tu pais:
+<select name="pais">
+<!-- <select>: lista desplegable; el usuario elige UNA opcion de la lista.
+     name="pais": nombre con el que se envia la opcion elegida -->
+
+<option value="1">Argentina</option>
+<!-- <option>: cada elemento de la lista.
+     value="1": dato que se envia al servidor.
+     El texto entre las etiquetas ("Argentina") es lo que ve el usuario.
+     La primera opcion aparece seleccionada por defecto -->
+
+<option value="2">España</option>
+<option value="3">Mexico</option>
+<option value="4">Guatemala</option>
+<option value="5">Honduras</option>
+<option value="6">El Salvador</option>
+<option value="7">Venezuela</option>
+<option value="8">Colombia</option>
+<!-- Cada pais tiene un value distinto para que el servidor sepa cual se eligio -->
+
+</select>
+<!-- Cierre de la lista desplegable -->
+<br>
+
+<input type="submit" value="enviar">
+<input type="reset" value="borrar">
+</form>
+
+
+<!-- ============================================================
+     7. FORMULARIO CON BOTONES
+     ============================================================ -->
+<h2>Formulario con botones</h2>
+<form action="" method="post">
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button>
+<!-- <button>: boton mas flexible que <input>, porque puede contener texto, iconos o imagenes.
+     type="submit": al presionarlo envia el formulario.
+     <i class="fa-regular fa-paper-plane">: icono de Font Awesome (avion de papel).
+       "fa-regular" indica el estilo del icono y "fa-paper-plane" cual icono es -->
+
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+<!-- type="reset": limpia el formulario.
+     "fa fa-trash": icono de bote de basura de Font Awesome -->
+
+</form>
+
+
+<!-- ============================================================
+     8. FORMULARIO CON ARCHIVOS
+     ============================================================ -->
+<h2>Formulario con archivos</h2>
+<form action="" method="post">
+
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+
+<input type="file" name="archivo">
+<!-- type="file": muestra el boton "Elegir archivo" para seleccionar un archivo de la computadora.
+     name="archivo": nombre con el que se envia.
+     Nota: para que el archivo realmente llegue al servidor, el <form> debe llevar
+     enctype="multipart/form-data"; aqui solo se muestra el campo -->
+<br>
+
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button>
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+<!-- Botones de enviar y borrar, con sus iconos -->
+</form>
+
+
+<!-- ============================================================
+     9. FORMULARIO CON CAMPOS OCULTOS
+     ============================================================ -->
+<h2>Formulario con campos ocultos</h2>
+<form action="" method="post">
+
+<input type="hidden" name="hora" value="3:30">
+<!-- type="hidden": campo que NO se ve en pantalla, pero se envia al servidor junto con los demas.
+     Sirve para mandar datos que el usuario no debe escribir (identificadores, fechas, horas, etc.).
+     name="hora": nombre del dato.
+     value="3:30": valor fijo que se enviara -->
+
+Ingresa tu nombre:
+<input type="text" name="nombre">
+<br>
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button>
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+</form>
+
+
+<!-- ============================================================
+     10. FORMULARIOS CON AGRUPAMIENTO
+     ============================================================ -->
+<h2>Formularios con agrupamiento</h2>
+<form action="" method="post">
+
+<fieldset>
+<!-- <fieldset>: agrupa campos relacionados dentro de un recuadro con borde,
+     para que el formulario sea mas claro y ordenado -->
+
+<legend>Datos personales</legend>
+<!-- <legend>: titulo del grupo; aparece sobre el borde del recuadro -->
+
+Nombre y apellido:
+<input type="text" name="nombre_apellido"><br>
+<!-- Caja de texto para el nombre completo -->
+
+Documento valido:
+<input type="file" name="documento"><br>
+<!-- Campo para adjuntar el documento de identidad -->
+
+Fecha de nacimiento:
+
+<input type="date" name="fecha_nacimiento">
+<!-- type="date": selector de fecha con calendario; el navegador valida que sea una fecha real -->
+
+</fieldset>
+<!-- Fin del primer grupo -->
+
+<fieldset>
+<legend>Datos de estudio:</legend>
+<!-- Segundo grupo, con sus propios campos -->
+
+Nombre de la escuela:
+<input type="text" name="escuela"><br>
+Certificado valido:
+<input type="file" name="certificado"><br>
+Fecha de egreso:
+<input type="date" name="fecha_egreso">
+<!-- Texto, archivo y fecha, igual que en el grupo anterior pero con datos escolares -->
+</fieldset>
+
+<br>
+<button type="submit">Enviar <i class="fa-regular fa-paper-plane"></i> </button>
+<button type="reset">Borrar <i class="fa fa-trash"></i></button>
+<!-- Un solo par de botones fuera de los grupos: envian todos los campos de ambos fieldset -->
+</form>
+
+
+<!-- ============================================================
+     11. FORMULARIO CON LIMITACIONES
+     ============================================================ -->
+<h2>Formulario con limitaciones</h2>
+<form action="" method="post">
+Ingresa tu nombre:
+
+<!-- Desahbilitacion de campo -->
+<input type="text" name="nombre" disabled><br>
+<!-- disabled: el campo queda bloqueado (se ve en gris). El usuario no puede escribir en el
+     y su valor NO se envia al servidor -->
+
+<!-- Limitacion de caracteres -->
+Contraseña:
+<input type="password" name="pass" maxlength="5"><br>
+<!-- maxlength="5": limita el numero maximo de caracteres que se pueden escribir (maximo 5) -->
+
+<!-- Solo lectura -->
+Comentarios:
+<textarea name="comentarios" readonly>
+
+Este es mi comentario y no se puede borrar
+</textarea><br>
+<!-- readonly: el contenido se puede ver y se envia al servidor, pero el usuario no lo puede modificar.
+     La diferencia con disabled es que readonly SI se envia.
+     El texto escrito entre <textarea> y </textarea> es el contenido inicial de la caja -->
+
+</form>
+
+</body>
+<!-- </body>: fin del contenido visible -->
+</html>
+<!-- </html>: fin del documento -->
