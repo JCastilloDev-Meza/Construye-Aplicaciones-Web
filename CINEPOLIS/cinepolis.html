@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinépolis - Cartelera y Club</title>
+</head>
+<body bgcolor="#F4F4F4" text="#000000">
+
+  <!-- ENCABEZADO Y BARRA DE NAVEGACIÓN -->
+  <table width="100%" bgcolor="#0B1F3F" cellpadding="15" cellspacing="0" border="0">
+    <tr>
+      <td align="left">
+        <font color="#FFCC00" size="6" face="Arial"><b>Cinépolis</b></font>
+      </td>
+      <td align="right">
+        <font face="Arial" size="3">
+          <a href="#cartelera"><font color="#FFFFFF"><b>En Cartelera</b></font></a> &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="#estrenos"><font color="#FFFFFF"><b>Próximos Estrenos</b></font></a> &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="#club"><font color="#FFCC00"><b>Club Cinépolis</b></font></a>
+        </font>
+      </td>
+    </tr>
+  </table>
+
+  <!-- CUERPO PRINCIPAL -->
+  <br>
+  <table width="900" align="center" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td>
+
+        <!-- SECCIÓN 1: EN CARTELERA -->
+        <h2 id="cartelera"><font face="Arial" color="#0B1F3F">En Cartelera</font></h2>
+        <hr size="3" color="#0B1F3F">
+        <br>
+
+        <table width="100%" cellpadding="10" cellspacing="15" border="1" bgcolor="#FFFFFF">
+          <tr align="center" valign="top">
+            
+            <!-- Película 1 -->
+            <width="33%">
+              <!-- APARTADO PARA LA IMAGEN -->
+              <img src="AQUÍ_VA_TU_IMAGEN_1.jpg" alt="Coloca tu imagen aquí" width="200" height="280" border="1"><br><br>
+              <font face="Arial">
+                <b>Película 1</b><br>
+                <font size="2" color="#666666">Clasificación: B | 120 min</font><br><br>
+                <form>
+                  <input type="button" value="Comprar Boletos">
+                </form>
+              </font>
+            </td>
+
+            <!-- Película 2 -->
+            <td width="33%">
+              <!-- APARTADO PARA LA IMAGEN -->
+              <img src="AQUÍ_VA_TU_IMAGEN_2.jpg" alt="Coloca tu imagen aquí" width="200" height="280" border="1"><br><br>
+              <font face="Arial">
+                <b>Película 2</b><br>
+                <font size="2" color="#666666">Clasificación: A | 95 min</font><br><br>
+                <form>
+                  <input type="button" value="Comprar Boletos">
+                </form>
+              </font>
+            </td>
+
+            <!-- Película 3 -->
+            <td width="33%">
+              <!-- APARTADO PARA LA IMAGEN -->
+              <img src="AQUÍ_VA_TU_IMAGEN_3.jpg" alt="Coloca tu imagen aquí" width="200" height="280" border="1"><br><br>
+              <font face="Arial">
+                <b>Película 3</b><br>
+                <font size="2" color="#666666">Clasificación: C | 110 min</font><br><br>
+                <form>
+                  <input type="button" value="Comprar Boletos">
+                </form>
+              </font>
+            </td>
+
+          </tr>
+        </table>
+
+        <br><br>
+
+        <!-- SECCIÓN 2: PRÓXIMOS ESTRENOS -->
+        <h2 id="estrenos"><font face="Arial" color="#0B1F3F">Próximos Estrenos</font></h2>
+        <hr size="3" color="#0B1F3F">
+        <br>
+
+        <table width="100%" cellpadding="10" cellspacing="15" border="1" bgcolor="#FFFFFF">
+          <tr align="center" valign="top">
+            
+            <!-- Estreno 1 -->
+            <td width="50%">
+              <!-- APARTADO PARA LA IMAGEN -->
+              <img src="AQUÍ_VA_TU_IMAGEN_ESTRENO_1.jpg" alt="Coloca tu imagen aquí" width="200" height="280" border="1"><br><br>
+              <font face="Arial">
+                <b>Próximo Estreno 1</b><br>
+                <font size="2" color="#666666">Estreno: Próximo Jueves</font>
+              </font>
+            </td>
+
+            <!-- Estreno 2 -->
+            <td width="50%">
+              <!-- APARTADO PARA LA IMAGEN -->
+              <img src="AQUÍ_VA_TU_IMAGEN_ESTRENO_2.jpg" alt="Coloca tu imagen aquí" width="200" height="280" border="1"><br><br>
+              <font face="Arial">
+                <b>Próximo Estreno 2</b><br>
+                <font size="2" color="#666666">Estreno: Próximo Mes</font>
+              </font>
+            </td>
+
+          </tr>
+        </table>
+
+        <br><br>
+
+        <!-- SECCIÓN 3: INICIO DE SESIÓN / REGISTRO TARJETA CLUB -->
+        <h2 id="club"><font face="Arial" color="#0B1F3F">Club Cinépolis</font></h2>
+        <hr size="3" color="#0B1F3F">
+        <br>
+
+        <table width="100%" cellpadding="20" cellspacing="0" border="2" bgcolor="#FFFFFF">
+          <tr>
+            <td>
+              <font face="Arial">
+                <p>Ingresa los datos de tu tarjeta Club Cinépolis para acumular puntos y obtener beneficios.</p>
+                
+                <form action="#" method="post">
+                  <p>
+                    <label for="num-tarjeta"><b>Número de Tarjeta Club Cinépolis:</b></label><br>
+                    <input type="text" id="num-tarjeta" name="num-tarjeta" size="30" placeholder="Ej. 1234 5678 9012" required>
+                  </p>
+
+                  <p>
+                    <label for="correo"><b>Correo Electrónico:</b></label><br>
+                    <input type="email" id="correo" name="correo" size="30" placeholder="correo@ejemplo.com" required>
+                  </p>
+
+                  <p>
+                    <label for="password"><b>Contraseña:</b></label><br>
+                    <input type="password" id="password" name="password" size="30" placeholder="******" required>
+                  </p>
+
+                  <p>
+                    <input type="submit" value="Ingresar a mi Cuenta">
+                  </p>
+                </form>
+              </font>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+  <br><br>
+
+  <!-- FOOTER -->
+  <table width="100%" bgcolor="#0B1F3F" cellpadding="20" cellspacing="0" border="0">
+    <tr>
+      <td align="center">
+        <font color="#FFFFFF" face="Arial" size="2">
+          &copy; 2026 Cinépolis - Todos los derechos reservados.<br>
+          Sitio web para fines de demostración.
+        </font>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
