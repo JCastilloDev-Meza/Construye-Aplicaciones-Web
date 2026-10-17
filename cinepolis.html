@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinepolis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #1a1423;
+            color: #f3e9dc;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #2d1b3d;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: #f3e9dc;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #ffb703;
+        }
+        nav .logo {
+            font-weight: bold;
+            font-size: 20px;
+            color: #ffb703;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #6a1b4d;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Cuerpo */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #ffb703;
+        }
+        .peliculas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .pelicula {
+            width: 180px;
+            text-align: center;
+        }
+        .pelicula img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            background-color: #3b2a4d;
+            border-radius: 6px;
+        }
+        .pelicula p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        /* Tarjeta Club */
+        .club {
+            background-color: #2d1b3d;
+            border: 2px solid #ffb703;
+            padding: 20px;
+            max-width: 350px;
+            margin-top: 30px;
+        }
+        .club label {
+            display: block;
+            margin-top: 10px;
+        }
+        .club input {
+            width: 100%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .club button {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #ffb703;
+            color: #1a1423;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .club button:hover {
+            background-color: #e09f00;
+        }
+        .club a {
+            color: #ffb703;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d1b3d;
+            color: #f3e9dc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="logo">cine estrella</span>
+        <a href="#cartelera">Películas</a>
+        <a href="#club">Club Estrella</a>
+    </nav>
+
+    <header>
+        <h1>Bienvenido a Cinepolis</h1>
+        <p>Ciudad Juárez, Chihuahua</p>
+    </header>
+
+    <main>
+
+
+<section id="cartelera">
+    <h2>En cartelera</h2>
+
+    <div class="peliculas">
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+                alt="Póster de Interestelar"
+                loading="lazy"
+            >
+            <p>Interestelar</p>
+        </div>
+
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg"
+                alt="Póster de Coco"
+                loading="lazy"
+            >
+            <p>Coco</p>
+        </div>
+
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+                alt="Póster de Parásitos"
+                loading="lazy"
+            >
+            <p>Parásitos</p>
+        </div>
+
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg"
+                alt="Póster de Mad Max: Furia en el Camino"
+                loading="lazy"
+            >
+            <p>Mad Max: Furia en el Camino</p>
+        </div>
+
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg"
+                alt="Póster de El viaje de Chihiro"
+                loading="lazy"
+            >
+            <p>El viaje de Chihiro</p>
+        </div>
+
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg"
+                alt="Póster de El origen"
+                loading="lazy"
+            >
+            <p>El origen</p>
+        </div>
+
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg"
+                alt="Póster de Gladiador"
+                loading="lazy"
+            >
+            <p>Gladiador</p>
+        </div>
+
+        <div class="pelicula">
+            <img
+                src="https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg"
+                alt="Póster de Blade Runner 2049"
+                loading="lazy"
+            >
+            <p>Blade Runner 2049</p>
+        </div>
+    </div>
+</section>
+
+
+        <section id="club">
+            <div class="club">
+                <h2>Club Estrella</h2>
+                <form action="#" method="post">
+                    <label for="tarjeta">Número de tarjeta</label>
+                    <input type="text" id="tarjeta" name="tarjeta" maxlength="16" placeholder="16 dígitos" required>
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Ingresar</button>
+                </form>
+                <p>¿No tienes tarjeta? <a href="#">Regístrate</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Núm Control: 24308051280865</p>
+        <p>Nombre: Francisco Jared Castillo Avila.</p>
+        <p>Grupo: 5°J</p>
+    </footer>
+
+</body>
+</html>
