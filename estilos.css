@@ -1,0 +1,30 @@
+body {
+    background: #f50404;
+    color: rgb(12, 12, 12);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    }
+    h1 { color: #000000; }
+    form {
+    background: #0e0d0d;
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 15px;
+    }
+    input, select, button {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 0;
+    border-radius: 7px;
+    }
+    button {
+    background: #ee0505;
+    color: white;
+    cursor: pointer;
+    }
+    a { color: #f1f1f1; }
