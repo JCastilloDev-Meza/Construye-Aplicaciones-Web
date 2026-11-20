@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levi's® México - Tienda Oficial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111111;
+      background-color: #f9f9f9;
+      line-height: 1.5;
+    }
+
+    /* ENCABEZADO (5%) */
+    header {
+      background-color: #ffffff;
+      border-bottom: 2px solid #e5e5e5;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo-levis {
+      display: inline-block;
+      background-color: #C41230;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: -1px;
+      padding: 6px 22px 10px 22px;
+      text-decoration: none;
+      clip-path: polygon(0 0, 100% 0, 95% 82%, 50% 100%, 5% 82%);
+    }
+
+    .accesos-header {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-header {
+      text-decoration: none;
+      color: #111111;
+      border: 1px solid #111111;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .btn-header:hover {
+      background-color: #111111;
+      color: #ffffff;
+    }
+
+    .btn-carrito {
+      background-color: #C41230;
+      color: #ffffff;
+      border-color: #C41230;
+    }
+
+    .btn-carrito:hover {
+      background-color: #9e0e26;
+      border-color: #9e0e26;
+    }
+
+    /* BARRA DE NAVEGACIÓN CON ANCLAJE (10%) */
+    nav {
+      background-color: #111111;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav ul li a:hover {
+      background-color: #C41230;
+    }
+
+    /* BANNER PRINCIPAL */
+    .hero {
+      background-color: #1c2431;
+      color: #ffffff;
+      text-align: center;
+      padding: 50px 20px;
+      border-bottom: 4px solid #C41230;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #dcdcdc;
+      margin-bottom: 20px;
+    }
+
+    .btn-principal {
+      display: inline-block;
+      background-color: #C41230;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 26px;
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .btn-principal:hover {
+      background-color: #9e0e26;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    main {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* SECCIONES DE PRODUCTOS (15%) */
+    .seccion-categoria {
+      padding-top: 60px;
+      margin-bottom: 30px;
+    }
+
+    .titulo-categoria {
+      font-size: 24px;
+      text-transform: uppercase;
+      border-left: 5px solid #C41230;
+      padding-left: 12px;
+      margin-bottom: 20px;
+      color: #111111;
+    }
+
+    .grid-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .tarjeta {
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tarjeta img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      background-color: #eeeeee;
+      margin-bottom: 14px;
+      border: 1px solid #e5e5e5;
+    }
+
+    .etiqueta-rebaja {
+      display: inline-block;
+      background-color: #C41230;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 8px;
+      margin-bottom: 8px;
+      width: fit-content;
+    }
+
+    .tarjeta h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .tarjeta p {
+      font-size: 13px;
+      color: #555555;
+      margin-bottom: 14px;
+    }
+
+    .precio {
+      font-size: 18px;
+      font-weight: bold;
+      color: #111111;
+      margin-bottom: 12px;
+    }
+
+    .precio-anterior {
+      text-decoration: line-through;
+      color: #888888;
+      font-size: 14px;
+      font-weight: normal;
+      margin-right: 6px;
+    }
+
+    .precio-oferta {
+      color: #C41230;
+    }
+
+    .btn-agregar {
+      display: block;
+      text-align: center;
+      background-color: #111111;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .btn-agregar:hover {
+      background-color: #C41230;
+    }
+
+    /* SECCIÓN DE INICIO DE SESIÓN / REGISTRO / CARRITO (15%) */
+    .seccion-usuario {
+      padding-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    .grid-formularios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .caja-panel {
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      padding: 22px;
+    }
+
+    .caja-panel h3 {
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #C41230;
+    }
+
+    .campo {
+      margin-bottom: 12px;
+    }
+
+    .campo label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .campo input {
+      width: 100%;
+      padding: 9px;
+      border: 1px solid #bbbbbb;
+      font-size: 14px;
+    }
+
+    .campo input:focus {
+      outline: none;
+      border-color: #C41230;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #C41230;
+      color: #ffffff;
+      border: none;
+      padding: 11px;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background-color: #9e0e26;
+    }
+
+    .btn-deshabilitado {
+      width: 100%;
+      background-color: #dddddd;
+      color: #666666;
+      border: 1px solid #cccccc;
+      padding: 11px;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: not-allowed;
+    }
+
+    .aviso-solo-login {
+      background-color: #fff4f4;
+      border-left: 4px solid #C41230;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: #333333;
+      margin-bottom: 14px;
+    }
+
+    /* Mensaje funcional usando :target (sin JavaScript) */
+    .mensaje-exito {
+      display: none;
+      background-color: #e8f7ed;
+      border: 1px solid #2e7d32;
+      color: #1b5e20;
+      padding: 12px;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    #bienvenida:target,
+    #compra-lista:target {
+      display: block;
+    }
+
+    /* Tabla simple del carrito */
+    .tabla-carrito {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .tabla-carrito th,
+    .tabla-carrito td {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 8px 4px;
+      text-align: left;
+    }
+
+    .tabla-carrito td:last-child,
+    .tabla-carrito th:last-child {
+      text-align: right;
+    }
+
+    .total-carrito {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: right;
+      margin-bottom: 14px;
+    }
+
+    /* FOOTER CON INFORMACIÓN DEL ALUMNO (5%) */
+    footer {
+      background-color: #111111;
+      color: #ffffff;
+      padding: 35px 5%;
+      margin-top: 40px;
+      border-top: 4px solid #C41230;
+    }
+
+    .contenedor-footer {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .info-alumno {
+      background-color: #1f1f1f;
+      border-left: 4px solid #C41230;
+      padding: 14px 18px;
+      font-size: 14px;
+    }
+
+    .info-alumno h4 {
+      color: #ff4d67;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    .info-alumno p {
+      margin-bottom: 3px;
+      color: #eaeaea;
+    }
+
+    .volver-arriba {
+      color: #ffffff;
+      text-decoration: none;
+      border: 1px solid #ffffff;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .volver-arriba:hover {
+      background-color: #C41230;
+      border-color: #C41230;
+    }
+
+    .copy {
+      max-width: 1140px;
+      margin: 20px auto 0 auto;
+      padding-top: 15px;
+      border-top: 1px solid #333333;
+      text-align: center;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+  </style>
+</head>
+<body id="inicio">
+
+  <!-- 1. ENCABEZADO CON LOGO (5%) -->
+  <header>
+    <a href="#inicio" class="logo-levis">LEVI'S®</a>
+    <div class="accesos-header">
+      <a href="#cuenta" class="btn-header">Iniciar Sesión / Registro</a>
+      <a href="#carrito" class="btn-header btn-carrito">Carrito (2)</a>
+    </div>
+  </header>
+
+  <!-- 2. BARRA DE NAVEGACIÓN CON ANCLAJE (10%) -->
+  <nav>
+    <ul>
+      <li><a href="#mujer">Mujer</a></li>
+      <li><a href="#hombre">Hombre</a></li>
+      <li><a href="#kids">Kids</a></li>
+      <li><a href="#colecciones">Colecciones</a></li>
+      <li><a href="#rebajas">Rebajas</a></li>
+    </ul>
+  </nav>
+
+  <!-- BANNER DE BIENVENIDA -->
+  <section class="hero">
+    <h1>EL DENIM ORIGINAL DESDE 1873</h1>
+    <p>Explora nuestras líneas clásicas para toda la familia con envío a todo México.</p>
+    <a href="#mujer" class="btn-principal">Ver Catálogo</a>
+  </section>
+
+  <!-- 3. CUERPO: 3 PRODUCTOS POR CADA OPCIÓN DE LA BARRA (15%) -->
+  <main>
+
+    <!-- CATEGORÍA 1: MUJER -->
+    <section id="mujer" class="seccion-categoria">
+      <h2 class="titulo-categoria">Mujer</h2>
+      <div class="grid-productos">
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80" alt="Jeans 501 Original Mujer">
+          <div>
+            <h3>Jeans 501® Original Mujer</h3>
+            <p>Corte recto clásico de tiro alto en mezclilla 100% algodón rígido.</p>
+          </div>
+          <div>
+            <div class="precio">$1,799 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&w=600&q=80" alt="Chamarra Ex-Boyfriend Trucker">
+          <div>
+            <h3>Chamarra Ex-Boyfriend Trucker</h3>
+            <p>Silueta relajada con botones metálicos grabados y bolsillos frontales.</p>
+          </div>
+          <div>
+            <div class="precio">$2,199 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80" alt="Jeans Ribcage Straight Ankle">
+          <div>
+            <h3>Jeans Ribcage Straight Ankle</h3>
+            <p>El tiro más alto de Levi's que estiliza la cintura con largo al tobillo.</p>
+          </div>
+          <div>
+            <div class="precio">$1,899 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CATEGORÍA 2: HOMBRE -->
+    <section id="hombre" class="seccion-categoria">
+      <h2 class="titulo-categoria">Hombre</h2>
+      <div class="grid-productos">
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="Jeans 501 Original Fit Hombre">
+          <div>
+            <h3>Jeans 501® Original Fit</h3>
+            <p>El icónico pantalón de bragueta de botones y pierna recta desde 1873.</p>
+          </div>
+          <div>
+            <div class="precio">$1,699 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=600&q=80" alt="Jeans 511 Slim Fit">
+          <div>
+            <h3>Jeans 511™ Slim Fit</h3>
+            <p>Ajuste moderno debajo de la cintura con tecnología Levi's® Flex.</p>
+          </div>
+          <div>
+            <div class="precio">$1,599 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=600&q=80" alt="Chamarra Type III Trucker">
+          <div>
+            <h3>Chamarra Type III Trucker</h3>
+            <p>La chamarra de mezclilla clásica con etiqueta roja Red Tab™.</p>
+          </div>
+          <div>
+            <div class="precio">$2,299 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CATEGORÍA 3: KIDS -->
+    <section id="kids" class="seccion-categoria">
+      <h2 class="titulo-categoria">Kids</h2>
+      <div class="grid-productos">
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="Jeans 510 Skinny Juvenil">
+          <div>
+            <h3>Jeans 510™ Skinny Juvenil</h3>
+            <p>Mezclilla elástica resistente con cintura ajustable interna para niños.</p>
+          </div>
+          <div>
+            <div class="precio">$899 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?auto=format&fit=crop&w=600&q=80" alt="Playera Batwing Clásica Kids">
+          <div>
+            <h3>Playera Batwing Clásica Kids</h3>
+            <p>Algodón suave transpirable con logotipo estampado al frente.</p>
+          </div>
+          <div>
+            <div class="precio">$449 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80" alt="Overol Short Denim Kids">
+          <div>
+            <h3>Overol Short Denim Kids</h3>
+            <p>Tirantes ajustables con broches metálicos y bolsillos utilitarios.</p>
+          </div>
+          <div>
+            <div class="precio">$999 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CATEGORÍA 4: COLECCIONES -->
+    <section id="colecciones" class="seccion-categoria">
+      <h2 class="titulo-categoria">Colecciones</h2>
+      <div class="grid-productos">
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1565084888279-aca607ecce0c?auto=format&fit=crop&w=600&q=80" alt="Vintage Clothing 1955 501">
+          <div>
+            <h3>Vintage Clothing 1955 501®</h3>
+            <p>Reproducción fiel de archivo confeccionada en mezclilla Selvedge.</p>
+          </div>
+          <div>
+            <div class="precio">$4,499 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=600&q=80" alt="Made & Crafted Barrel Jeans">
+          <div>
+            <h3>Made &amp; Crafted® Barrel Jeans</h3>
+            <p>Diseño contemporáneo de pierna curva con acabados artesanales.</p>
+          </div>
+          <div>
+            <div class="precio">$3,299 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?auto=format&fit=crop&w=600&q=80" alt="Colección WellThread Sherpa">
+          <div>
+            <h3>Colección WellThread® Sherpa</h3>
+            <p>Chamarra sustentable elaborada con algodón orgánico y fibras recicladas.</p>
+          </div>
+          <div>
+            <div class="precio">$2,699 MXN</div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CATEGORÍA 5: REBAJAS -->
+    <section id="rebajas" class="seccion-categoria">
+      <h2 class="titulo-categoria">Rebajas</h2>
+      <div class="grid-productos">
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="Playera Graphic Set-In Neck">
+          <div>
+            <span class="etiqueta-rebaja">30% DE DESCUENTO</span>
+            <h3>Playera Graphic Set-In Neck</h3>
+            <p>Corte regular de algodón peinado en color blanco clásico.</p>
+          </div>
+          <div>
+            <div class="precio">
+              <span class="precio-anterior">$599 MXN</span>
+              <span class="precio-oferta">$419 MXN</span>
+            </div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80" alt="Shorts 501 Hemmed">
+          <div>
+            <span class="etiqueta-rebaja">40% DE DESCUENTO</span>
+            <h3>Shorts 501® Hemmed</h3>
+            <p>Shorts de mezclilla azul medio con dobladillo clásico de verano.</p>
+          </div>
+          <div>
+            <div class="precio">
+              <span class="precio-anterior">$1,199 MXN</span>
+              <span class="precio-oferta">$719 MXN</span>
+            </div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80" alt="Camisa Barstow Western">
+          <div>
+            <span class="etiqueta-rebaja">25% DE DESCUENTO</span>
+            <h3>Camisa Barstow Western</h3>
+            <p>Camisa vaquera de manga larga con broches nacarados.</p>
+          </div>
+          <div>
+            <div class="precio">
+              <span class="precio-anterior">$1,399 MXN</span>
+              <span class="precio-oferta">$1,049 MXN</span>
+            </div>
+            <a href="#carrito" class="btn-agregar">Agregar al Carrito</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. INICIO DE SESIÓN FUNCIONAL / REGISTRO / CARRITO (15%) -->
+    <section id="cuenta" class="seccion-usuario">
+      <h2 class="titulo-categoria">Cuenta de Usuario y Carrito</h2>
+      <div class="grid-formularios">
+
+        <!-- FORMULARIO 1: INICIO DE SESIÓN FUNCIONAL (HTML5 + CSS :target) -->
+        <div class="caja-panel">
+          <h3>Iniciar Sesión</h3>
+          <form action="#bienvenida" method="get">
+            <div class="campo">
+              <label for="correo-login">Correo electrónico *</label>
+              <input type="email" id="correo-login" name="correo" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="campo">
+              <label for="pass-login">Contraseña *</label>
+              <input type="password" id="pass-login" name="password" placeholder="Mínimo 6 caracteres" minlength="6" required>
+            </div>
+            <button type="submit" class="btn-submit">Entrar a mi cuenta</button>
+          </form>
+
+          <!-- Mensaje funcional al enviar el formulario -->
+          <div id="bienvenida" class="mensaje-exito">
+            ¡Inicio de sesión exitoso! Bienvenido a Levi's® México.
+          </div>
+        </div>
+
+        <!-- FORMULARIO 2: REGISTRO (SOLO VISUAL, DESHABILITADO) -->
+        <div class="caja-panel">
+          <h3>Registro de Usuario</h3>
+          <div class="aviso-solo-login">
+            Aviso: Por el momento únicamente el formulario de <strong>Inicio de Sesión</strong> se encuentra activo.
+          </div>
+          <form>
+            <div class="campo">
+              <label for="nombre-reg">Nombre completo</label>
+              <input type="text" id="nombre-reg" placeholder="No disponible" disabled>
+            </div>
+            <div class="campo">
+              <label for="correo-reg">Correo electrónico</label>
+              <input type="email" id="correo-reg" placeholder="No disponible" disabled>
+            </div>
+            <button type="button" class="btn-deshabilitado" disabled>Registro Deshabilitado</button>
+          </form>
+        </div>
+
+        <!-- PANEL 3: CARRITO DE COMPRAS -->
+        <div id="carrito" class="caja-panel">
+          <h3>Carrito de Compras</h3>
+          <table class="tabla-carrito">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cant.</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jeans 501® Original Fit</td>
+                <td>1</td>
+                <td>$1,699</td>
+              </tr>
+              <tr>
+                <td>Chamarra Type III Trucker</td>
+                <td>1</td>
+                <td>$2,299</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="total-carrito">Total: $3,998 MXN</div>
+          <a href="#compra-lista" class="btn-agregar">Confirmar Pedido</a>
+
+          <div id="compra-lista" class="mensaje-exito">
+            ¡Pedido registrado! Tu orden Levi's® está en proceso.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. FOOTER CON INFORMACIÓN DEL ALUMNO (5%) -->
+  <footer>
+    <div class="contenedor-footer">
+      <div class="info-alumno">
+        <h4>Información del Alumno</h4>
+        <p><strong>Nombre:</strong> FRANCISCO JARED CASTILLO AVILA</p>
+        <p><strong>Materia:</strong> Programación Web</p>
+        <p><strong>Práctica:</strong> Sitio Web Levi's® con Formulario y Anclajes (HTML y CSS)</p>
+      </div>
+
+      <a href="#inicio" class="volver-arriba">↑ Subir al inicio</a>
+    </div>
+
+    <div class="copy">
+      © 2026 Levi Strauss &amp; Co. — Proyecto Académico desarrollado por FRANCISCO JARED CASTILLO AVILA.
+    </div>
+  </footer>
+
+</body>
+</html>
